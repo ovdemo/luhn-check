@@ -1,1 +1,1 @@
-13:28:22.032 [main] INFO  com.ovdemo.luhnCheck.MyTests - Started tests.
+15:52:01.174 [main] ERROR com.ovdemo.luhnCheck.LuhnCheck - Invalid PAN length: 0
