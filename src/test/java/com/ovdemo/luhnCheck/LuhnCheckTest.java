@@ -16,31 +16,31 @@ public class LuhnCheckTest {
 
 	@ParameterizedTest
 	@ValueSource(strings = { "49927398716", "1234567812345670" })
-	void testPANs(String number) throws Exception {
+	void testValidPANs(String number) throws Exception {
 		assertTrue(LuhnCheck.validate(number));
 	}
 
 	@ParameterizedTest
 	@ValueSource(strings = { "PAY49927398716", "PAN1234567812345670" })
-	void testPANsWithLetterPrefix(String number) throws Exception {
+	void testValidPANsWithLetterPrefix(String number) throws Exception {
 		assertTrue(LuhnCheck.validate(number));
 	}
 
 	@ParameterizedTest
 	@ValueSource(strings = { "49927398716PAY", "1234567812345670PAN" })
-	void testPANsWithLetterSuffix(String number) throws Exception {
+	void testValidPANsWithLetterSuffix(String number) throws Exception {
 		assertTrue(LuhnCheck.validate(number));
 	}
 
 	@ParameterizedTest
 	@ValueSource(strings = { "4992-7398-716", "1234-5678-1234-5670" })
-	void testPANsWithHyphens(String number) throws Exception {
+	void testValidPANsWithHyphens(String number) throws Exception {
 		assertTrue(LuhnCheck.validate(number));
 	}
 
 	@ParameterizedTest
 	@ValueSource(strings = { "49927398717", "1234567812345678", "able was I ere I saw elba" })
-	void testNotPANs(String number) throws Exception {
+	void testNonPANs(String number) throws Exception {
 		assertFalse(LuhnCheck.validate(number));
 	}
 }
