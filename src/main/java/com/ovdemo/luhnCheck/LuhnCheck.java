@@ -33,8 +33,8 @@ public class LuhnCheck {
             if(i % 2 == 0) { // this is for odd digits, they are 1-indexed in the algorithm
                 s1 += digit;
             } else { // add 2 * digit for 0-4, add 2 * digit - 9 for 5-9
-                int temp = 2 * digit;
-                s2 += temp > 9 ? temp - 9 : temp;
+                int localValue = 2 * digit;
+                s2 += localValue > 9 ? localValue - 9 : localValue;
             }
         }
 
